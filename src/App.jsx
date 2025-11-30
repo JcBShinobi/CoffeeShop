@@ -1,14 +1,27 @@
-import Login from "./components/Login";
-import Products from "./components/Products";
-import Cart from "./components/Cart";
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
+import Navbar from "./components/Navbar";
 
-export default function App() {
+function App() {
   return (
-    <div style={{ fontFamily: "sans-serif", padding: 20 }}>
-      <h1>Coffee Shop</h1>
-      <Login />
-      <Products />
-      <Cart />
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+
+export default App;
