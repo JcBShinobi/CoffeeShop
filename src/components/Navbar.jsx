@@ -8,7 +8,7 @@ function Navbar() {
   const { user } = useAuth();
 
   return (
-    <nav style={{ display: "flex", gap: 20, padding: 20 }}>
+    <nav style={{ display: "flex", flexDirection: "column", gap: 20, padding: 20 }}>
       <Link to="/">Home</Link>
       <Link to="/products">Produtos</Link>
       <Link to="/cart">Carrinho</Link>

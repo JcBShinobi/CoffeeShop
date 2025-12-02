@@ -1,0 +1,75 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Coluna esquerda */
+.left-column {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fb;
+  color: black;
+}
+
+/* Topbar (pequena, mesma largura da sidebar) */
+.left-topbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background: #f5f7fb;
+}
+
+/* Sidebar (menu vertical) */
+.left-sidebar {
+  flex: 1;
+  overflow-y: auto;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  background: #f5f7fb;
+}
+
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  gap: 3px;
+  width: 100%;
+}
+
+/* Links e botões da sidebar */
+.sidebar-inner a,
+.sidebar-inner button {
+  font-size: 0.9rem;
+  font-weight: 300;
+  width: 100%;                 /* Botão preenche a largura corretamente */
+  display: block;
+  padding: 3px 15px;
+  text-align: left;
+  background: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+/* HOVER correto, sem deslocamentos nem espaçamentos */
+.sidebar-inner a:hover,
+.sidebar-inner button:hover {
+  background: rgb(233, 233, 233);
+  color: rgb(0, 0, 0);
+}
+.sidebar-inner a.active {
+  font-weight: 800;
+}
+/* Conteúdo */
+.main-content {
+  flex: 1;
+  background: #f5f7fb;
+  padding: 20px;
+  overflow-y: auto;
+}
+.topbar-inner{
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+}

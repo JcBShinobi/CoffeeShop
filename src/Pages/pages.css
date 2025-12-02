@@ -1,0 +1,19 @@
+.input {
+
+  padding:5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  font-size: 14px;
+  background: #fafafa;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #b04c4c; /* cor do teu tema */
+  background: white;
+  box-shadow: 0 0 0 2px rgba(176, 76, 76, 0.2);
+}
+
+.input::placeholder {
+  color: #000000;
+}

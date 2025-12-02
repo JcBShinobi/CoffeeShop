@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
-
+import "./pages.css";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,10 +17,10 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Login</h1>
-      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+      <input className="input" placeholder="Email" onChange={e => setEmail(e.target.value)} />
+      <input className="input" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
       <button onClick={login}>Entrar</button>
     </div>
   );
