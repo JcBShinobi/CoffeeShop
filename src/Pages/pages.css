@@ -6,6 +6,7 @@
   font-size: 14px;
   background: #fafafa;
   outline: none;
+  color: black; 
 }
 
 .input:focus {
@@ -16,4 +17,5 @@
 
 .input::placeholder {
   color: #000000;
+  
 }
