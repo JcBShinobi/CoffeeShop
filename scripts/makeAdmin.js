@@ -3,8 +3,9 @@ import { readFileSync } from "fs";
 
 // caminho ABSOLUTO fora do projeto (100% seguro)
 const serviceAccount = JSON.parse(
-  readFileSync("C:/keys/serviceAccountKey.json", "utf8")
+  readFileSync(new URL("./serviceAccountKey.json", import.meta.url))
 );
+
 
 if (!admin.apps.length) {
   admin.initializeApp({
