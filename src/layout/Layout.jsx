@@ -1,6 +1,7 @@
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import "./layout.css";
+// import { useAuth } from "../context/useAuth";
 
 export default function Layout({ children }) {
   return (

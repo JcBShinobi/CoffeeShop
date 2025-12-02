@@ -1,7 +1,14 @@
+// firebase.js
 import { initializeApp } from "firebase/app";
-import { getAuth, connectAuthEmulator } from "firebase/auth";
-import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
-import { getStorage, connectStorageEmulator } from "firebase/storage";
+import { 
+  getAuth, connectAuthEmulator 
+} from "firebase/auth";
+import { 
+  getFirestore, connectFirestoreEmulator 
+} from "firebase/firestore";
+import { 
+  getStorage, connectStorageEmulator 
+} from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAZ-t06eMaiog0b7abqqr_lavqmtOd5NwQ",
@@ -19,8 +26,10 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-// EMULADORES
-if (location.hostname === "localhost") {
+// 👉 usa emulador APENAS no localhost
+if (window.location.hostname === "localhost") {
+  console.log("🔥 A usar Firebase Emulator!");
+
   connectAuthEmulator(auth, "http://localhost:9099");
   connectFirestoreEmulator(db, "localhost", 8080);
   connectStorageEmulator(storage, "localhost", 9199);

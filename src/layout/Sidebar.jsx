@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/useAuth";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 

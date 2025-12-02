@@ -1,4 +1,6 @@
 {
+  "projectId": "coffeeshop-54f57",
+
   "hosting": {
     "public": "dist",
     "ignore": [
@@ -12,5 +14,41 @@
         "destination": "/index.html"
       }
     ]
+  },
+
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+
+  "storage": {
+    "rules": "storage.rules"
+  },
+
+  "emulators": {
+    "auth": {
+  "port": 9099,
+  "host": "localhost",
+  "auth": {
+    "import": "users.json"
+  }
+}
+,
+    "firestore": {
+      "port": 8080,
+      "host": "localhost"
+    },
+    "storage": {
+      "port": 9199,
+      "host": "localhost"
+    },
+    "hosting": {
+      "port": 5000,
+      "host": "localhost"
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    }
   }
 }

@@ -1,0 +1,12 @@
+// Firestore rules
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // permitir tudo no Emulator (por enquanto)
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
