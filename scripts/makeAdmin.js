@@ -8,7 +8,7 @@ if (!admin.apps.length) {
 
 const auth = admin.auth();
 
-const UID = "ho7r76IJMX6MhO1nt13lKQxp6wmx";
+const UID = "U1BqCnFIppQMLzucdZQ3pG4STSp2";
 
 async function makeAdmin() {
   try {
