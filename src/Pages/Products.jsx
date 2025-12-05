@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase/firebase";
 import { collection, addDoc, onSnapshot } from "firebase/firestore";
-import { useAuth } from "../context/useAuth";
+import { useAuth } from "../context/useAuth.js";
 import "./pages.css";
 
 function Products() {

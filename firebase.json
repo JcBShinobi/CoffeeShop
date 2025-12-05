@@ -21,15 +21,18 @@
     "indexes": "firestore.indexes.json"
   },
 
+  "storage": {
+    "rules": "storage.rules"
+  },
+
   "emulators": {
     "auth": {
-  "port": 9099,
-  "host": "localhost",
-  "auth": {
-    "import": "users.json"
-  }
-}
-,
+      "port": 9099,
+      "host": "localhost",
+      "auth": {
+        "import": "users.json"
+      }
+    },
     "firestore": {
       "port": 8080,
       "host": "localhost"

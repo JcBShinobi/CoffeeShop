@@ -3,33 +3,22 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { AuthContext } from "./AuthContext";
 
-export const AuthProvider = ({ children }) => {
+export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (currentUser) => {
-      if (currentUser) {
-        await currentUser.getIdToken(true);
-        const token = await currentUser.getIdTokenResult();
-
-        setUser({
-          ...currentUser,
-          role: token.claims.role || "user",
-        });
-      } else {
-        setUser(null);
-      }
-
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
       setLoading(false);
     });
 
-    return unsub;
+    return unsubscribe;
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user }}>
+    <AuthContext.Provider value={{ user, loading }}>
       {!loading && children}
     </AuthContext.Provider>
   );
-};
+}

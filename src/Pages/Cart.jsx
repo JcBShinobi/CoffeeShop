@@ -1,3 +1,3 @@
 export default function Cart() {
-  return <h1>Carrinho</h1>;
+  return <h1>Inventário</h1>;
 }
