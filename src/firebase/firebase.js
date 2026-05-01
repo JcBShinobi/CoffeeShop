@@ -26,13 +26,4 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 
-// 👉 usa emulador APENAS no localhost
-if (window.location.hostname === "localhost") {
-  console.log("🔥 A usar Firebase Emulator!");
-
-  connectAuthEmulator(auth, "http://localhost:9099");
-  connectFirestoreEmulator(db, "localhost", 8080);
-  connectStorageEmulator(storage, "localhost", 9199);
-}
-
 export default app;
